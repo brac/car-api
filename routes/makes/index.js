@@ -15,7 +15,7 @@ makes.get('/:id', (req, res) => {
   const id = req.params.id * 1;
   const model   = data.makes.find(m => m.id === id);
 
-  if (model == undefined) { res.status(200).json({message: `Model id not found: ${id}`})}
+  if (model == undefined) { return res.status(200).json({message: `Model id not found: ${id}`})}
 
   res.status(200).json({ model });
 })
